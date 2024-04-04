@@ -1,0 +1,32 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+const name = "M. Tubagus Farrasandi";
+---
+
+<MainLayout
+  title="M. Tubagus Farrasandi"
+  seoTitle="M. Tubagus Farrasandi"
+  seoDesc="Im a Software Engineer who expertise in AstroJS, Python, Java, and C++"
+>
+  <div class="w-8/12 md:w-6/12 mx-auto">
+    <h1 class="text-5xl md:text-6xl">
+      Hello👋, I am Muhammad Tubagus Farrasandi
+    </h1>
+    <div id="typed-strings">
+      <p>I am a <strong>Software Engineer</strong></p>
+      <p>I <em>work</em> with Astro, Python, React, Java, and C++.</p>
+    </div>
+  </div>
+
+  <div class="text-center mt-6"><span id="typed"></span></div>
+</MainLayout>
+
+<script>
+  import Typed from "typed.js";
+
+  var typed = new Typed("#typed", {
+    stringsElement: "#typed-strings",
+    typeSpeed: 50,
+    loop: true,
+  });
+</script>

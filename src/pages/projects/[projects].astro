@@ -1,0 +1,55 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export const prerender = true;
+export async function getStaticPaths() {
+  return [
+    {
+      params: { projects: "astro" },
+      props: {
+        name: "AstroJS",
+        desc: "pls comeback later",
+      },
+    },
+    {
+      params: { projects: "java" },
+      props: {
+        name: "Java",
+        desc: "pls comeback later",
+      },
+    },
+    {
+      params: { projects: "python" },
+      props: {
+        name: "Python",
+        desc: "pls comeback later",
+      },
+    },
+    {
+      params: { projects: "c++" },
+      props: {
+        name: "C++",
+        desc: "pls comeback later",
+      },
+    },
+  ];
+}
+
+const { params, props } = Astro;
+
+const { projects } = params;
+const { name, desc } = props;
+---
+
+<MainLayout>
+  <section class="mx-auto w-3/6">
+    <img 
+      src={`/images/${projects}.png`}
+      width="600" 
+      height="600" 
+      class="rounded" 
+    />
+    <h1 class="font-bold mt-4">Project {name}</h1>
+    <p>{desc}</p>
+  </section>
+</MainLayout>
